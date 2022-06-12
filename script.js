@@ -7,7 +7,7 @@ function log(message) {
   `;
 }
 
-function onClick() {
+async function onClick() {
   try {
     const ndef = new NDEFReader();
 
