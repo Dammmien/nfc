@@ -1,4 +1,3 @@
-
 function log(message) {
   const result = document.querySelector('#result');
 
@@ -7,7 +6,17 @@ function log(message) {
   `;
 }
 
-async function onClick() {
+async function write() {
+  const ndef = new NDEFReader();
+
+  await ndef.write({
+    records: [{ recordType: "url", data: "https://w3c.github.io/web-nfc/" }]
+  });
+
+  log('Message written');
+}
+
+async function scan() {
   try {
     const ndef = new NDEFReader();
 
@@ -30,8 +39,11 @@ async function onClick() {
 }
 
 function main() {
-  const button = document.querySelector('#button');
-  button.addEventListener('click', onClick);
+  const scanButton = document.querySelector('#scan');
+  scanButton.addEventListener('click', scan);
+
+  const writeButton = document.querySelector('#write');
+  writeButton.addEventListener('click', write);
 }
 
 document.addEventListener('DOMContentLoaded', main, false);
