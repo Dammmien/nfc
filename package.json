@@ -1,0 +1,15 @@
+{
+  "name": "nfc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "serve": "dev-file-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dev-file-server": "1.0.0"
+  }
+}
